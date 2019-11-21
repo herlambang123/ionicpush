@@ -1,0 +1,37 @@
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "be8dbb09-f668-4cdb-9d15-a55031168d0e",
+    });
+  });
+</script>
+<ion-header>
+  <ion-toolbar color="danger">
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title>Status Transaksi</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Nama Barang" [(ngModel)]="todo.task"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-input required type="number" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
+    </ion-item> -->
+    <ion-item>
+    <ion-label>Status Transaksi</ion-label>
+    <ion-select required type="text" value="dikemas" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.priority">
+      <ion-select-option required type="text" value="Dikemas" >Sedang Dikemas</ion-select-option>
+      <ion-select-option required type="text" value="Dikirim">Sedang Dikirim</ion-select-option>
+      <ion-select-option required type="text" value="Sampai" >Sudah Sampai</ion-select-option>
+    </ion-select>
+  </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="danger"(click)="saveTodo()">Save</ion-button>
+</ion-content>
